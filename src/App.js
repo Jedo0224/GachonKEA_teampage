@@ -13,11 +13,15 @@ function App() {
     () => [
       {
         accessor: "image",
-        Header: "Image"
+        Header: "Image",
       },
       {
         accessor: "name",
-        Header: "Name"
+        Header: "Name",
+      },
+      {
+        accessor: "no",
+        Header: "Student Number",
       },
       {
         accessor: "dept",
@@ -41,49 +45,49 @@ function App() {
 
   const data = [
     {
-      'name': "　　　박도영　　　",
-      'no': 201800000,
-      'phone': '010-6633-3653　　　',
-      'email': 'doodoo55@gachon.ac.kr　　　',
-      'dept': 'AI·소프트웨어학부(소프트웨어전공)　　　',
+      'name': "박도영",
+      'no': "201835453",
+      'phone': '010-6633-3653',
+      'email': 'doodoo55@gachon.ac.kr',
+      'dept': 'AI·소프트웨어학부(소프트웨어전공)',
       'github': 'https://github.com/Doyoung-Park',
-      'image': <img src={pdy}/>
+      'image': <img src={pdy} alt="박도영"/>
     },
     {
-      'name': "　　　박재석　　　",
-      'no': 201734919,
-      'phone': '010-8612-8138　　　',
-      'email': 'qkrwotjr0@gmail.com　　　', 
+      'name': "박재석",
+      'no': "201734919",
+      'phone': '010-8612-8138',
+      'email': 'qkrwotjr0@gmail.com', 
       'dept': '산업경영공학과', 
       'github': 'https://github.com/Jedo0224',
-      'image': <img src={pjs}/>
+      'image': <img src={pjs} alt="박재석"/>
     },
     {
-      'name': "　　　서강덕　　　",
-      'no': 201735979,
-      'phone': '010-8731-2312　　　', 
-      'email': 'rkdejr2321@naver.com　　　', 
+      'name': "서강덕",
+      'no': "201735979",
+      'phone': '010-8731-2312', 
+      'email': 'rkdejr2321@naver.com', 
       'dept': '컴퓨터공학과', 
       'github': 'https://github.com/rkdejr2321',
-      'image': <img src={skd}/>
+      'image': <img src={skd} alt="서강덕"/>
     },
     {
-      'name': "　　　서지원　　　",
-      'no': 201835465,
-      'phone': '010-4725-8654　　　',
-      'email': 'jwjw6410@gmail.com'　　　, 
-      'dept': 'AI·소프트웨어학부(소프트웨어전공)　　　',
+      'name': "서지원",
+      'no': "201835465",
+      'phone': '010-4725-8654',
+      'email': 'jwjw6410@gmail.com', 
+      'dept': 'AI·소프트웨어학부(소프트웨어전공)',
       'github': 'https://github.com/manips1',
-      'image': <img src={sjw}/>
+      'image': <img src={sjw} alt="서지원"/>
     },
     {
-      'name': "　　　안해빈　　　",
-      'no': 201835474,
-      'phone': '010-9870-3043　　　',
-      'email': 'gnh06280@naver.com'　　　,
-      'dept': 'AI·소프트웨어학부(소프트웨어전공)　　　',
+      'name': "안해빈",
+      'no': "201835474",
+      'phone': '010-9870-3043',
+      'email': 'gnh06280@naver.com',
+      'dept': 'AI·소프트웨어학부(소프트웨어전공)',
       'github': 'https://github.com/HaebinAHN',
-      'image': <img src={ahb}/>
+      'image': <img src={ahb} alt="안해빈"/>
     },
   ];
 
