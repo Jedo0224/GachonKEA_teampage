@@ -6,12 +6,19 @@ function Table({ columns, data }) {
     useTable({ columns, data });
 
   return (
+    <div>
+    <h2>Members' Information</h2>
     <table {...getTableProps()}>
       <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+              <th {...column.getHeaderProps({
+                style: {
+                  minWidth:200,
+                  width:300
+                }
+              })}>{column.render("Header")}</th>
             ))}
           </tr>
         ))}
@@ -20,7 +27,11 @@ function Table({ columns, data }) {
         {rows.map((row) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()}>
+            <tr {...row.getRowProps({
+              style: {
+                textAlign: "center"
+              }
+            })}>
               {row.cells.map((cell) => (
                 <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
               ))}
@@ -29,6 +40,7 @@ function Table({ columns, data }) {
         })}
       </tbody>
     </table>
+    </div>
   );
 }
 
