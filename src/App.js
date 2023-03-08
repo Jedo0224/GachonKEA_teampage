@@ -1,97 +1,25 @@
-import { useMemo } from "react";
-import "./App.css";
-import Table from "./member";
-
-import pjs from './박재석.png'
-import pdy from './박도영.png'
-import skd from './서강덕.png'
-import ahb from './안해빈.jpg'
-import sjw from './서지원.jpg'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/home';
+import Knp from './pages/knp';
+import Vision from './pages/vision';
+import Team from './pages/team';
+import Footer from './Layout/Footer';
+import Header from './Layout/Header';
 function App() {
-  const columns = useMemo(
-    () => [
-      {
-        accessor: "image",
-        Header: "Image",
-      },
-      {
-        accessor: "name",
-        Header: "Name",
-      },
-      {
-        accessor: "no",
-        Header: "Student Number",
-      },
-      {
-        accessor: "dept",
-        Header: "Department"
-      },
-      {
-        accessor: "email",
-        Header: "Email"
-      },
-      {
-        accessor: "phone",
-        Header: "Phone"
-      },
-      {
-        accessor: "github",
-        Header: "Github"
-      },
-    ],
-    []
+  return (
+    <div>
+      <BrowserRouter>
+      <Header/>
+        <Routes>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/vision' element={<Vision/>}></Route>
+          <Route path='/team' element={<Team/>}></Route>
+          <Route path='/knp' element={<Knp/>}></Route>
+        </Routes>
+      <Footer/>
+      </BrowserRouter>
+    </div>
   );
-
-  const data = [
-    {
-      'name': "박도영",
-      'no': "201835453",
-      'phone': '010-6633-3653',
-      'email': 'doodoo55@gachon.ac.kr',
-      'dept': 'AI·소프트웨어학부(소프트웨어전공)',
-      'github': 'https://github.com/Doyoung-Park',
-      'image': <img src={pdy} alt="박도영"/>
-    },
-    {
-      'name': "박재석",
-      'no': "201734919",
-      'phone': '010-8612-8138',
-      'email': 'qkrwotjr0@gmail.com', 
-      'dept': '산업경영공학과', 
-      'github': 'https://github.com/Jedo0224',
-      'image': <img src={pjs} alt="박재석"/>
-    },
-    {
-      'name': "서강덕",
-      'no': "201735979",
-      'phone': '010-8731-2312', 
-      'email': 'rkdejr2321@naver.com', 
-      'dept': '컴퓨터공학과', 
-      'github': 'https://github.com/rkdejr2321',
-      'image': <img src={skd} alt="서강덕"/>
-    },
-    {
-      'name': "서지원",
-      'no': "201835465",
-      'phone': '010-4725-8654',
-      'email': 'jwjw6410@gmail.com', 
-      'dept': 'AI·소프트웨어학부(소프트웨어전공)',
-      'github': 'https://github.com/manips1',
-      'image': <img src={sjw} alt="서지원"/>
-    },
-    {
-      'name': "안해빈",
-      'no': "201835474",
-      'phone': '010-9870-3043',
-      'email': 'gnh06280@naver.com',
-      'dept': 'AI·소프트웨어학부(소프트웨어전공)',
-      'github': 'https://github.com/HaebinAHN',
-      'image': <img src={ahb} alt="안해빈"/>
-    },
-  ];
-
-  return <Table columns={columns} data={data} />;
 }
 
 export default App;
